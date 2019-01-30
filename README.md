@@ -18,7 +18,7 @@ mvn clean package
 to package the project into a jar
 Then go into the 'target' folder and copy the jar. Paste this jar into the plugin folder of your protege installation. Then run protege. To use the plugin open the EBM tool tab
 
-## Using the tool
+### Using the tool
 First follow the instructions on how running the tool.
 This plug-in relates decision tables (rules) to concepts/ classes in protege. To get started I recommend making a decision table by follwing this [tutorial](https://docs.camunda.org/get-started/dmn11/model/) (note that at the moment only Variables of type string work). I also recommend making an onltolgy in protege ([tutoria](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0)). Now initialize the EBM tab, which is under window -> tab -> EBM rule management. You should be able to see this:
 ![alt text](https://github.com/tom277/EBM_ruleManagement/blob/master/images/Capture.JPG)
