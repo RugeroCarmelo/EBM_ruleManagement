@@ -20,9 +20,27 @@ Then go into the 'target' folder and copy the jar. Paste this jar into the plugi
 
 ## Using the tool
 First follow the instructions on how running the tool.
-This plug-in relates decision tables (rules) to concepts/ classes in protege. To get started I recommend making a decision table by follwing this [tutorial](https://docs.camunda.org/get-started/dmn11/model/) (note that at the moment only Variables of type string work). After you've saved you need to open protege
+This plug-in relates decision tables (rules) to concepts/ classes in protege. To get started I recommend making a decision table by follwing this [tutorial](https://docs.camunda.org/get-started/dmn11/model/) (note that at the moment only Variables of type string work). I also recommend making an onltolgy in protege ([tutoria](https://medium.com/@vindulajayawardana/ontology-generation-and-visualization-with-prot%C3%A9g%C3%A9-6df0af9955e0)). Now initialize the EBM tab, which is under window -> tab -> EBM rule management. You should be able to see this:
 ![alt text](https://github.com/tom277/EBM_ruleManagement/blob/master/images/Capture.JPG)
+##### Adding Rules
+- Press 'Add rule' (a pop up should appear)
+- Press the 'Load' button find the desired decision table file (a file with a dmn extension)
+- Fill in the remaining fields
+- Press 'Add' button
+##### Adding Relations
+- Select the class to which you want to add a rule from the Class hierarchy view
+- Press the 'Add relation' button 
+- Press the 'Add Rules' button
+- Selected the rules you want to add (multiple rules can be selected by holding the 'Ctrl' key)
+- Press the 'Add' Button
+##### Exporting
+Once you've added all the rules and completed the ontolgy you can export the information to be used by the [EBM_tool](https://github.com/tom277/EBM_tool). 
 
+- Ensure that the file is saved in RDF/XML format
+- Press 'export' button
+- choose where you want to save the file to
+- choose a file name and add the .per extension (Ex: FileName.per)
+- Now the file can be opened from the [EBM_tool](https://github.com/tom277/EBM_tool)
 ## New Features
 -
 
@@ -33,3 +51,6 @@ This plug-in relates decision tables (rules) to concepts/ classes in protege. To
 ## License
 This project is licensed under the MIT License
 **Free Software**
+
+## Acknowledgments
+- HOANG THUAN, N. (2016). ESTABLISH CROWDSOURCING AS AN ORGANISATIONAL BUSINESS PROCESS: A DESIGN SCIENCE APPROACH. Ph.D. Victoria University of Wellington. --  Used for the ontology shown as example
