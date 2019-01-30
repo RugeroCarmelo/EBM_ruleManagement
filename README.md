@@ -1,6 +1,6 @@
 # EBM rule management Protege plugin
 
-This tool is a protege plugin which is used to add rules to classes in protege. This information can be exported and opened with the EBM tool
+This tool is a protege plugin which is used to add rules to classes in protege. This information can be exported and opened with the EBM tool. Rules are written using the cammunda editor in the DMN format and then imported into the plugin.
 
 ## Getting Started
 ### Prerequisites
