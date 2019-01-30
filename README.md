@@ -41,6 +41,19 @@ Once you've added all the rules and completed the ontolgy you can export the inf
 - choose where you want to save the file to
 - choose a file name and add the .per extension (Ex: FileName.per)
 - Now the file can be opened from the [EBM_tool](https://github.com/tom277/EBM_tool)
+
+##### Adding Definitions and extra information
+- Go to the Entities tab
+- Select class to which you want to add aditional information
+- On the view on the right select the Annotations tab
+- Select the button '+' shown below
+
+![alt text](https://github.com/tom277/EBM_ruleManagement/blob/master/images/Capture5.JPG)
+- Choose the type of extra information that you want to add
+- Alternatively make a new type of information
+    - Currently the only types read by the [EBM_tool](https://github.com/tom277/EBM_tool) are: "definition", "comment" and "reference"
+
+![alt text](https://github.com/tom277/EBM_ruleManagement/blob/master/images/Capture6.JPG)
 ## New Features
 -
 
