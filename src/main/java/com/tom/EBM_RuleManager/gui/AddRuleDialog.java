@@ -7,6 +7,7 @@ import java.awt.Insets;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 
 import javax.swing.BorderFactory;
@@ -19,6 +20,8 @@ import javax.swing.JOptionPane;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+
+import org.apache.commons.io.IOUtils;
 
 import com.tom.EBM_RuleManager.Listeners.AddRuleEvent;
 import com.tom.EBM_RuleManager.Listeners.AddRuleListener;
@@ -39,7 +42,7 @@ public class AddRuleDialog extends JDialog {
 	private String fileLocation;
 	private AddRuleListener listener;
 	private String id;
-	private File file;
+	private byte[] file;
 	private static JFrame frame = null;
 
 	public AddRuleDialog(JFileChooser fileChooser) {
@@ -66,7 +69,14 @@ public class AddRuleDialog extends JDialog {
 					if (checkExtension(fileLocation)) {
 						ruleLocation.setText(fileLocation);// gets the string of the location of the file
 						ReadXML readXML = new ReadXML(fileLocation);
-						file = readXML.getFile();
+						InputStream tmp = readXML.getInputStream();
+						try {
+							file = IOUtils.toByteArray(tmp);
+						} catch (IOException e) {
+							e.printStackTrace();
+							JOptionPane.showMessageDialog(AddRuleDialog.this, "This file is not in the right Format",
+									"Error", JOptionPane.OK_OPTION | JOptionPane.ERROR_MESSAGE);
+						}
 						id = readXML.getFileId();
 						ruleNameField.setText(readXML.getFileName());
 					} else {

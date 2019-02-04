@@ -13,6 +13,10 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 import javax.swing.filechooser.FileFilter;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import com.tom.EBM.protege.tab.EBMWorkspaceTab;
 import com.tom.EBM_RuleManager.Listeners.AddRelationEvent;
 import com.tom.EBM_RuleManager.Listeners.AddRelationListener;
 import com.tom.EBM_RuleManager.Listeners.AddRuleEvent;
@@ -34,6 +38,7 @@ public class MainFrame extends JPanel {
 	private StringListener stringListener;
 	private String currentSelectedClass;
 	private String currentOntologyPath;
+	private static final Logger log = LoggerFactory.getLogger(EBMWorkspaceTab.class);
 
 	public MainFrame() {
 		// super(title);
@@ -108,6 +113,7 @@ public class MainFrame extends JPanel {
 						} catch (IOException e) {
 							JOptionPane.showMessageDialog(MainFrame.this, "Could not save data to file", "Error",
 									JOptionPane.ERROR_MESSAGE);
+							e.printStackTrace();
 						}
 					}
 				}

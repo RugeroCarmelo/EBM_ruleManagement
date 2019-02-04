@@ -10,10 +10,10 @@ public class AddRuleEvent extends EventObject {
 	private String info;
 	private String ruleLocation;
 	String ID;
-	File file;
+	byte[] file;
 
 	public AddRuleEvent(Object source, String ruleLocation, String topic, String ruleName, String info, String ID,
-			File file) {
+			byte[] file) {
 		super(source);// this calls the constructor of the parent class in this case EventObject //If
 						// you wanted to call a function from the parent use super.NameOfFunction();
 
@@ -29,7 +29,7 @@ public class AddRuleEvent extends EventObject {
 		return ID;
 	}
 
-	public File getFile() {
+	public byte[] getFile() {
 		return file;
 	}
 

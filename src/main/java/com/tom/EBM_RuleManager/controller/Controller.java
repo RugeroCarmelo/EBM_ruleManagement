@@ -18,7 +18,7 @@ public class Controller {
 	public List<Relation> getRelations(){
 		return db.getRelations();
 	}
-	public void addRule(String ruleLocation, String topic, String ruleName, String info, String ID, File file) {
+	public void addRule(String ruleLocation, String topic, String ruleName, String info, String ID, byte[] file) {
 		Rule rule = new Rule(ruleLocation, topic, ruleName, info, ID, file);
 		db.addRule(rule);
 	}
