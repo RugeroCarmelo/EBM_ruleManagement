@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" xmlns:biodi="http://bpmn.io/schema/dmn/biodi/1.0" id="Definitions_058bl8v" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Decision_13nychf" name="Management">
+    <extensionElements>
+      <biodi:bounds x="195" y="126" width="180" height="80" />
+    </extensionElements>
+    <decisionTable id="decisionTable_1" hitPolicy="FIRST">
+      <input id="input_1" label="Budget: Sufficient (S) vs. Large (L)">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>budget</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1vcklw9" label="Crowdsourcing expert: Available (A) vs. Not available (N)">
+        <inputExpression id="LiteralExpression_04jt7je" typeRef="string">
+          <text>expert</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0sni5oy" label="Acceptance level of risk: High (H) vs. Low (L)">
+        <inputExpression id="LiteralExpression_0ki32zy" typeRef="string">
+          <text>risk</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_1ntxz7b" label="Internal commitment: High (H) vs. Low (L)">
+        <inputExpression id="LiteralExpression_1bhpq9b" typeRef="string">
+          <text>commitment</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" label="Decision" name="decision" typeRef="string" />
+      <rule id="DecisionRule_1awjxew">
+        <description>test</description>
+        <inputEntry id="UnaryTests_1cmcri5">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0n7sdvh">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v28lec">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1pv3c0t">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0o33wrs">
+          <text>"Should crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ycz3qa">
+        <inputEntry id="UnaryTests_05w2gvy">
+          <text>"S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09zmlyr">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1rlcm0y">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0a6dw3f">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_12hqkkm">
+          <text>"Not to crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0l8qfrw">
+        <inputEntry id="UnaryTests_0vv8xpp">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_14bzrc2">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1ssmaju">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rnidw2">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0i9jivp">
+          <text>"CSwAA: hire outside experts (due to large budget)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ipxcof">
+        <inputEntry id="UnaryTests_17b8sp5">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1xdq9w1">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dox6ym">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0jjyz9y">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_08arx73">
+          <text>"CSwAA: hire outside experts (due to large budget)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0etggwa">
+        <inputEntry id="UnaryTests_1ivniro">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0uwtaws">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ceevqc">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cgah9n">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1ptpjga">
+          <text>"CSwAA: hire outside experts (due to large budget)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ayynm6">
+        <inputEntry id="UnaryTests_1baf9ek">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1v2i6pg">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1cdr2q6">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yyojcu">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_18ee5qw">
+          <text>"CSwAA: hire outside experts (due to large budget)"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0hm6ggn">
+        <inputEntry id="UnaryTests_1ofagsd">
+          <text>"S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0hyivn1">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_05lhdb7">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07y9hmw">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vx9umi">
+          <text>"CSwAA: implement mechanisms for controlling risks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1asrv16">
+        <inputEntry id="UnaryTests_0b7pgpf">
+          <text>"S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_094qpye">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_07ao977">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_192illm">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0kd6ahb">
+          <text>"CSwAA: implement mechanisms for controlling risks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pu6pej">
+        <inputEntry id="UnaryTests_1xe6ioi">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09jm3zv">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1a7aub9">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_041drqg">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0dl82le">
+          <text>"CSwAA: implement mechanisms for controlling risks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1iyvt8z">
+        <inputEntry id="UnaryTests_1om3jvu">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bwp9l9">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0erzh0o">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p9m85d">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w7ak5r">
+          <text>"CSwAA: implement mechanisms for controlling risks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1l042r3">
+        <inputEntry id="UnaryTests_1chz5yr">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16guemy">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1te9oq2">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_08ouan5">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1mdvbut">
+          <text>"CSwAA: implement mechanisms for controlling risks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0v0kq8x">
+        <inputEntry id="UnaryTests_0zhjmod">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t0z4z8">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1i19fgj">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zuuhmv">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1g3jpjs">
+          <text>"CSwAA: implement mechanisms for controlling risks"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1pgwr7n">
+        <inputEntry id="UnaryTests_18f9cn5">
+          <text>"S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qj3yu5">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1os10fh">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1yaedvl">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1l9d9mc">
+          <text>"CSwAA: implement strategies for increasing internal commitment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0jfd25v">
+        <inputEntry id="UnaryTests_0l5t2hs">
+          <text>"S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0eo920i">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1nvbbi2">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0bl7eh2">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1c8ueth">
+          <text>"CSwAA: implement strategies for increasing internal commitment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_198gepo">
+        <inputEntry id="UnaryTests_14gnot5">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cxujv3">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1drp26b">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0drhsrb">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0wq0k6p">
+          <text>"CSwAA: implement strategies for increasing internal commitment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0opvhti">
+        <inputEntry id="UnaryTests_1lx3tbq">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1m75oc8">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1lljsu1">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02apyje">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0a00syx">
+          <text>"CSwAA: implement strategies for increasing internal commitment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1c1fz8s">
+        <inputEntry id="UnaryTests_1f5yq3k">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1jh0omc">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0luddvg">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04jzfev">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_17gs1b7">
+          <text>"CSwAA: implement strategies for increasing internal commitment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lzzc8q">
+        <inputEntry id="UnaryTests_19wispi">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1qtn34g">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_19lkn6f">
+          <text>"L"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1p3whni">
+          <text>"L"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1n3dk3l">
+          <text>"CSwAA: implement strategies for increasing internal commitment"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1lt3r8m">
+        <inputEntry id="UnaryTests_0ss23ao">
+          <text>"S"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0t78pxn">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_09x4431">
+          <text>"H"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0qhrxd3">
+          <text>"H"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_16he84v">
+          <text>"Should crowdsource"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

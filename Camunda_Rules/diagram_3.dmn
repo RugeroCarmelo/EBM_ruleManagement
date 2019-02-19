@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0wp5k2g" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Decision_13nyxhf" name="People">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="The crowd for task: Available (A) vs. Not available (N)">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>crowd</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0wjm31c" label="Employees for task: Few (F) vs. Many (M)">
+        <inputExpression id="LiteralExpression_0pgv6eo" typeRef="string">
+          <text>employees</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="string" />
+      <rule id="DecisionRule_1kiyidv">
+        <inputEntry id="UnaryTests_1ksu59u">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_02h9g13">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_07f4uc9">
+          <text>"Not to crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_19ntkp9">
+        <inputEntry id="UnaryTests_0jkqs6g">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tnhqyt">
+          <text>"F"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0vof886">
+          <text>"Should crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0wa60un">
+        <inputEntry id="UnaryTests_0lahzxt">
+          <text>"A"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1gafq5t">
+          <text>"M"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_064r5g1">
+          <text>"CSwAA: consider other factors"</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>

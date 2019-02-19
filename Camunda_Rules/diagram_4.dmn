@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions xmlns="http://www.omg.org/spec/DMN/20151101/dmn.xsd" id="Definitions_0z1b361" name="DRD" namespace="http://camunda.org/schema/1.0/dmn">
+  <decision id="Decision_13nyxhf" name="Task Properties">
+    <decisionTable id="decisionTable_1">
+      <input id="input_1" label="Internet: Yes (Y) vs. No (N)">
+        <inputExpression id="inputExpression_1" typeRef="string">
+          <text>internet</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0r4q360" label="Ease of integration with existing BP">
+        <inputExpression id="LiteralExpression_138isnt" typeRef="string">
+          <text>integration</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_05cylax" label="Interactive">
+        <inputExpression id="LiteralExpression_1eh46x0" typeRef="string">
+          <text>interactive</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0yuo9t5" label="Ease of delineation">
+        <inputExpression id="LiteralExpression_0l520gd" typeRef="string">
+          <text>delineation</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_10jfmnu" label="Confidential information">
+        <inputExpression id="LiteralExpression_1f9750z" typeRef="string">
+          <text>information</text>
+        </inputExpression>
+      </input>
+      <input id="InputClause_0xek782" label="Partitionable">
+        <inputExpression id="LiteralExpression_0jwjucw" typeRef="string">
+          <text>partitionable</text>
+        </inputExpression>
+      </input>
+      <output id="output_1" typeRef="string" />
+      <rule id="DecisionRule_0g9mjo2">
+        <inputEntry id="UnaryTests_07p754u">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0b30fci">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_002d3nb">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1f0pmro">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c5ibts">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0q9q0hv">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0jnwhyh">
+          <text>"Not to crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1028csc">
+        <inputEntry id="UnaryTests_0xhrmk4">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_01oyk11">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xsogha">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0tq9u1l">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_064bk22">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1llhafm">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0j0emso">
+          <text>"Not to crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1gxzekm">
+        <inputEntry id="UnaryTests_10fkdtc">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gvvjbn">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ix5w5b">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rb1ay1">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_04rh36x">
+          <text></text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wkbhk3">
+          <text></text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0w5lbxi">
+          <text>"Not to crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1fk0wh5">
+        <inputEntry id="UnaryTests_1pknpqn">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1vqlsrl">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0yoia14">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z5yqy8">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0cndi74">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bwb9jd">
+          <text>"Y"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1aoq7as">
+          <text>"CSwAA: hiding confidential information"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1e8i8wo">
+        <inputEntry id="UnaryTests_1o66sih">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0giyc5o">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0leio30">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1b5qwbw">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_157mqyb">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0ivu897">
+          <text>"N"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1y8d6zf">
+          <text>"CSwAA: hiding confidential information, CSwAA: only crowdsource as a contest"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_1jay3tb">
+        <inputEntry id="UnaryTests_10gfkqf">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0d7qdob">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03kd07n">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0g9fg5t">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1c1gu9u">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_005ki1j">
+          <text>"Y"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1d7ekum">
+          <text>"Should crowdsource"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0ie0lk3">
+        <inputEntry id="UnaryTests_091q999">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0p4ia97">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_00iqdm8">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0rfak24">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_159h53v">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1can24d">
+          <text>"N"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_198k96l">
+          <text>"CSwAA: only crowdsource as a contest"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_01vklrr">
+        <inputEntry id="UnaryTests_0471ha9">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1q65s4i">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0xwhe9f">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0aywgwi">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0gy4sda">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_10tfdsv">
+          <text>"Y"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0udmwk1">
+          <text>"Crowdsource with additional action
+(CSwAA): clearly define task in the latter
+stages of the BPC process, CSwAA: hiding confidential information"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0fhqkqz">
+        <inputEntry id="UnaryTests_1iblhy7">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0mvhi7p">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0kn9ev9">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_16s5og3">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1dnjrbv">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1d3hewv">
+          <text>"N"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0ae51xu">
+          <text>"Crowdsource with additional action
+(CSwAA): clearly define task in the latter
+stages of the BPC process"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i48wdi">
+        <inputEntry id="UnaryTests_1d51hpz">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0zzm317">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_03qxb6n">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1sit14l">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_138gcjv">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0dr1lkd">
+          <text>"Y"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_0gcv7p3">
+          <text>"Crowdsource with additional action
+(CSwAA): clearly define task in the latter
+stages of the BPC process"</text>
+        </outputEntry>
+      </rule>
+      <rule id="DecisionRule_0i0iffg">
+        <inputEntry id="UnaryTests_0yl0xl2">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0k8eabj">
+          <text>"Y"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_15cmajj">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_1bohn4c">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0wmcth8">
+          <text>"N"</text>
+        </inputEntry>
+        <inputEntry id="UnaryTests_0z4go3g">
+          <text>"N"</text>
+        </inputEntry>
+        <outputEntry id="LiteralExpression_1cd9on7">
+          <text>"Crowdsource with additional action
+(CSwAA): clearly define task in the latter
+stages of the BPC process
+, CSwAA: only crowdsource as a contest "</text>
+        </outputEntry>
+      </rule>
+    </decisionTable>
+  </decision>
+</definitions>
